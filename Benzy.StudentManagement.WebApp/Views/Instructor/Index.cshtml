@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Benzy.StudentManagement.WebApp.Models.Instructors>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InstructorsName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstructorsPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstructorsEmail)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstructorsName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstructorsPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstructorsEmail)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.InstructorsId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.InstructorsId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.InstructorsId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
