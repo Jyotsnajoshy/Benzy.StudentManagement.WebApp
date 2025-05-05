@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using WebApp.Entity1.Data;
+using WebApp.Service.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     var connStr = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseSqlServer(connStr);
 });
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+
 
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();

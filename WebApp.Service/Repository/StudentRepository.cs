@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Benzy.StudentManagement.WebApp.Models;
+using Microsoft.EntityFrameworkCore;
 using WebApp.Entity1.Data;
 
 namespace WebApp.Service.Repository

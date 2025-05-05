@@ -6,8 +6,8 @@ namespace Benzy.StudentManagement.WebApp.Controllers
 {
     public class StudentController : Controller
     {
-        private readonly StudentRepository studentRepository;
-        public StudentController(StudentRepository repository)
+        private readonly IStudentRepository studentRepository;
+        public StudentController(IStudentRepository repository)
         {
             studentRepository = repository;
         }
